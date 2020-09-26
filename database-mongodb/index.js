@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost:3000';
+const mongoUri = 'mongodb://localhost/mykea';
 
-const db = mongoose.connect(mongoUri);
+const db = mongoose.connect(mongoUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 module.exports = db;
