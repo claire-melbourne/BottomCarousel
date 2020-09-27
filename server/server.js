@@ -12,9 +12,12 @@ app.get('/relatedFurnitures', (request, response) => {
         console.log(error);
         //console.log(data);
         response.send(JSON.stringify(data));
+        response.end();
     });
 });
 
 app.listen(port, () => {
     console.log(`Server listening at port: ${port}`);
 });
+
+module.exports = app;
