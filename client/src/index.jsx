@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import controllers from '../../server/controllers';
 
-import Carousel from '../src/components/Carousel';
+import Carousel_item from './components/Carousel_Item';
 
 class App extends React.Component {
     constructor(props) {
@@ -70,7 +70,11 @@ class App extends React.Component {
                 onClick={() => this.handleLeftClick()}
                 disabled={this.state.first === 0}>
                 </button>
-                <Carousel/>
+                <div className="Carousel">
+                    {this.state.displayed.map((item) => {
+                        return (<Carousel_item key={item['_id']} item={item}/>);
+                    })}
+                </div>
                 <button
                 onClick={() => this.handleRightClick()}
                 disabled={this.state.last === this.state.data.length - 1}>
