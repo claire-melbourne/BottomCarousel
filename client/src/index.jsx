@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import controllers from '../../server/controllers';
 
+import Carousel from '../src/components/Carousel';
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,9 @@ class App extends React.Component {
             first: 0,
             //index of last element of displayed items
             last: 0
-        }
+        };
+        this.handleRightClick = this.handleRightClick.bind(this);
+        this.handleLeftClick = this.handleLeftClick.bind(this);
     }
 
     componentDidMount() {
@@ -61,7 +65,17 @@ class App extends React.Component {
 
     render() {
         return (
-            <h1>Testing123</h1>
+            <div className="BottomCarousel">
+                <button 
+                onClick={() => this.handleLeftClick()}
+                disabled={this.state.first === 0}>
+                </button>
+                <Carousel/>
+                <button
+                onClick={() => this.handleRightClick()}
+                disabled={this.state.last === this.state.data.length - 1}>
+                </button>
+            </div>
         );
     }
 }
