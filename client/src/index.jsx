@@ -7,7 +7,12 @@ import Carousel_item from './components/Carousel_Item';
 
 const Container = styled.div`
     display: flex;
+    justify-content: center;
 `;
+
+const Left_Button = styled.button``;
+
+const Right_Button = styled.button``;
 
 class App extends React.Component {
     constructor(props) {
@@ -72,19 +77,19 @@ class App extends React.Component {
         return (
             <div className="BottomCarousel">
                 <h3 className="Module_Header">Similar Products</h3>
-                <button 
-                onClick={() => this.handleLeftClick()}
-                disabled={this.state.first === 0}>
-                </button>
-                <div className="Carousel">
+                <Container>
+                    <Left_Button 
+                    onClick={() => this.handleLeftClick()}
+                    disabled={this.state.first === 0}>
+                    </Left_Button>
                     {this.state.displayed.map((item) => {
                         return (<Carousel_item key={item['_id']} item={item}/>);
                     })}
-                </div>
-                <button
-                onClick={() => this.handleRightClick()}
-                disabled={this.state.last === this.state.data.length - 1}>
-                </button>
+                    <Right_Button
+                    onClick={() => this.handleRightClick()}
+                    disabled={this.state.last === this.state.data.length - 1}>
+                    </Right_Button>
+                </Container>
             </div>
         );
     }
