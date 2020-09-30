@@ -66,6 +66,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="BottomCarousel">
+                <h3 className="Module_Header">Similar Products</h3>
                 <button 
                 onClick={() => this.handleLeftClick()}
                 disabled={this.state.first === 0}>

@@ -1,0 +1,10 @@
+.Carousel_Item {
+    display: inline-block;
+    width: 300px;
+    height: auto;
+}
+
+.Carousel_Item_Image {
+    width: 100%;
+    height: auto;
+}

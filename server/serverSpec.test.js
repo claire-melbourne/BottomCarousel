@@ -1,7 +1,5 @@
-const { TestScheduler } = require('jest');
 const mongoose = require('mongoose');
 const request = require('supertest');
-const { deleteOne } = require('../database-mongodb/Furniture');
 const app = require('../server/app');
 
 describe('Server Tests', () => {
