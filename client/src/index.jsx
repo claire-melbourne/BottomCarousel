@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import controllers from '../../server/controllers';
+import styled from 'styled-components';
 
 import Carousel_item from './components/Carousel_Item';
+
+const Container = styled.div`
+    display: flex;
+`;
 
 class App extends React.Component {
     constructor(props) {
