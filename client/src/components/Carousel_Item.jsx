@@ -3,10 +3,10 @@ import React from 'react';
 const Carousel_Item = (props) => {
     return (
         <div className="Carousel_Item">
+            <img className="Carousel_Item_Image" src={props.item.imageUrl}/>
             <div className="Carousel_Item_Name">
                 {props.item.name}
             </div>
-            <img className="Carousel_Item_Image" src={props.item.imageUrl}/>
             <div className="Carousel_Item_Category">
                 {props.item.category}
             </div>
