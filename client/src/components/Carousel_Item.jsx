@@ -5,13 +5,12 @@ import Rating from 'react-star-ratings';
 const Item = styled.div`
     flex-grow: 1;
     flex-shrink: 3;
+    margin: 5px;
 `;
 
 const Image = styled.img`
-    width: 100%;
+    width: 200px;
     height: auto;
-    flex-grow: 1;
-    flex-shrink: 3;
 `;
 
 const Title = styled.div`
@@ -26,7 +25,20 @@ const Category = styled.div`
     font-size: smaller;
 `;
 
-const Price = styled.div``;
+const Price = styled.div`
+    &:before {
+        content: '$';
+        font-size: 0.6em;
+        vertical-align: top;
+    }
+    &:after {
+        content: '.96';
+        font-size: 0.6em;
+        vertical-align: top;
+    }
+    font-family: Sans-serif;
+    font-weight: bold;
+`;
 
 const Carousel_Item = (props) => {
     return (
@@ -34,7 +46,7 @@ const Carousel_Item = (props) => {
             <Image src={props.item.imageUrl}/>
             <Title> {props.item.name} </Title>
             <Category> {props.item.category} </Category>
-            <Price> {props.item.price} </Price>
+            <Price>{props.item.price}</Price>
             <Rating
               rating={props.item.rating}
               starRatedColor="black"

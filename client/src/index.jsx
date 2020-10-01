@@ -6,13 +6,14 @@ import styled from 'styled-components';
 import Carousel_item from './components/Carousel_Item';
 
 const Container = styled.div`
-    display: flex;
+    display: inline-flex;
     justify-content: center;
+    padding: 5px;
 `;
 
-const Left_Button = styled.button``;
+const LeftButton = styled.button``;
 
-const Right_Button = styled.button``;
+const RightButton = styled.button``;
 
 class App extends React.Component {
     constructor(props) {
@@ -78,17 +79,17 @@ class App extends React.Component {
             <div className="BottomCarousel">
                 <h3 className="Module_Header">Similar Products</h3>
                 <Container>
-                    <Left_Button 
+                    <LeftButton 
                     onClick={() => this.handleLeftClick()}
                     disabled={this.state.first === 0}>
-                    </Left_Button>
+                    </LeftButton>
                     {this.state.displayed.map((item) => {
                         return (<Carousel_item key={item['_id']} item={item}/>);
                     })}
-                    <Right_Button
+                    <RightButton
                     onClick={() => this.handleRightClick()}
                     disabled={this.state.last === this.state.data.length - 1}>
-                    </Right_Button>
+                    </RightButton>
                 </Container>
             </div>
         );
