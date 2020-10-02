@@ -1,0 +1,24 @@
+.rec.rec-arrow {
+    opacity: 0;
+    color: white;
+    background-color: black;
+}
+
+.rec.rec-arrow:hover:enabled {
+    filter: grayscale(90%);
+}
+
+.rec.rec-arrow:focus:enabled {
+    color: white;
+    background-color: black;
+}
+
+.rec.rec-arrow:disabled {
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.rec.rec-carousel:hover > .rec.rec-arrow {
+    opacity: 1;
+}
+
