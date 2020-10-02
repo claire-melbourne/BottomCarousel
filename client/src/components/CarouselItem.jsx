@@ -9,7 +9,7 @@ const Item = styled.div`
 `;
 
 const Image = styled.img`
-    width: 200px;
+    width: 220px;
     height: auto;
 `;
 
@@ -26,6 +26,8 @@ const Category = styled.div`
 `;
 
 const Price = styled.div`
+    font-family: Sans-serif;
+    font-weight: bold;
     &:before {
         content: '$';
         font-size: 0.6em;
@@ -36,11 +38,9 @@ const Price = styled.div`
         font-size: 0.6em;
         vertical-align: top;
     }
-    font-family: Sans-serif;
-    font-weight: bold;
 `;
 
-const Carousel_Item = (props) => {
+const CarouselItem = (props) => {
     return (
         <Item>
             <Image src={props.item.imageUrl}/>
@@ -60,4 +60,4 @@ const Carousel_Item = (props) => {
     );
 };
 
-export default Carousel_Item;
+export default CarouselItem;
