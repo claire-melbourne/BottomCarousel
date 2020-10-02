@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import controllers from '../../server/controllers';
 import styled from 'styled-components';
 
+//Import Sub-Component;
 import CarouselItem from './components/CarouselItem';
 
+//Styled Components;
 const Container = styled.div`
     display: inline-flex;
     justify-content: center;
@@ -14,19 +16,45 @@ const Container = styled.div`
 const LeftButton = styled.button`
     width: 50px;
     height: 50px;
+    margin: auto;
     border-radius: 50%;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNjcgMGwyLjgzIDIuODI5LTkuMzM5IDkuMTc1IDkuMzM5IDkuMTY3LTIuODMgMi44MjktMTIuMTctMTEuOTk2eiIvPjwvc3ZnPg==);
+    display: inline-block;
+    opacity: 0;
+    transition: 0.3s;
+    border-style: none;
+    background: white url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNjcgMGwyLjgzIDIuODI5LTkuMzM5IDkuMTc1IDkuMzM5IDkuMTY3LTIuODMgMi44MjktMTIuMTctMTEuOTk2eiIvPjwvc3ZnPg==);
     background-repeat: no-repeat;
     background-position: center;
+    filter: invert(100%);
+    outline-style: none;
+    &:hover {
+        filter: invert(90%);
+    }
+    ${Container}:hover & {
+        opacity: 1;
+    }
 `;
 
 const RightButton = styled.button`
     width: 50px;
     height: 50px;
+    margin: auto;
     border-radius: 50%;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=);
+    display: inline-block;
+    opacity: 0;
+    transition: 0.3s;
+    border-style: none;
+    background: white url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAzbDMuMDU3LTMgMTEuOTQzIDEyLTExLjk0MyAxMi0zLjA1Ny0zIDktOXoiLz48L3N2Zz4=);
     background-repeat: no-repeat;
     background-position: center;
+    filter: invert(100%);
+    outline-style: none;
+    &:hover {
+        filter: invert(90%);
+    }
+    ${Container}:hover & {
+        opacity: 1;
+    }
 `;
 
 class App extends React.Component {
@@ -35,9 +63,7 @@ class App extends React.Component {
         this.state = {
             data: [],
             displayed: [],
-            //index of first element of displayed items
             first: 0,
-            //index of last element of displayed items
             last: 0
         };
         this.handleRightClick = this.handleRightClick.bind(this);
@@ -49,9 +75,7 @@ class App extends React.Component {
           .then(({ data }) => {
               this.setState({
                   data: data,
-                  //the carousel displays 4 items at a time
                   displayed: data.slice(0, 4),
-                  //the last index is set to three, while the first index remains at 0
                   last: 3
               })
           })

@@ -9,7 +9,7 @@ const Item = styled.div`
 `;
 
 const Image = styled.img`
-    width: 200px;
+    width: 220px;
     height: auto;
 `;
 
