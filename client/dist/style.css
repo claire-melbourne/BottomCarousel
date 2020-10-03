@@ -1,0 +1,41 @@
+.rec.rec-arrow {
+    opacity: 0;
+    color: white;
+    background-color: black;
+}
+
+.rec.rec-arrow:hover:enabled {
+    filter: grayscale(90%);
+}
+
+.rec.rec-arrow:focus:enabled {
+    color: white;
+    background-color: black;
+}
+
+.rec.rec-arrow:disabled {
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.rec.rec-carousel:hover > .rec.rec-arrow {
+    opacity: 1;
+}
+
+button.brcpxa{
+    background-color: black;
+    box-shadow: 0 0 1px 3px black;
+    border-style: none;
+}
+  
+button.brcpxa:hover, button.brcpxa:active, button.brcpxa:focus  {
+    box-shadow: 0 0 1px 3px black;
+}
+  
+button.ikyGAt{
+    box-shadow: 0 0 1px 2px black;
+}
+  
+button.ikyGAt:hover{
+    box-shadow: 0 0 1px 3px black;
+}

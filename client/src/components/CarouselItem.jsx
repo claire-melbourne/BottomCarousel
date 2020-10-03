@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Rating from 'react-star-ratings';
 
 const Item = styled.div`
-    flex-grow: 1;
-    flex-shrink: 3;
-    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
 `;
 
 const Image = styled.img`
