@@ -22,3 +22,20 @@
     opacity: 1;
 }
 
+button.brcpxa{
+    background-color: black;
+    box-shadow: 0 0 1px 3px black;
+    border-style: none;
+}
+  
+button.brcpxa:hover, button.brcpxa:active, button.brcpxa:focus  {
+    box-shadow: 0 0 1px 3px black;
+}
+  
+button.ikyGAt{
+    box-shadow: 0 0 1px 2px black;
+}
+  
+button.ikyGAt:hover{
+    box-shadow: 0 0 1px 3px black;
+}
