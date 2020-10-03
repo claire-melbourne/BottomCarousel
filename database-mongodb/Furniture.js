@@ -7,7 +7,8 @@ const furnitureSchema = new mongoose.Schema({
     category: String,
     price: Number,
     rating: Number,
-    imageUrl: String
+    imageUrl: String,
+    onSale: Boolean
 },
 {
     timestamps: false

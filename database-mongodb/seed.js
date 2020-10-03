@@ -12,8 +12,9 @@ const bulkCreate = () => {
             name: faker.commerce.productName(),
             category: faker.commerce.product(),
             price: faker.random.number({min: 20, max: 300}),
-            rating: faker.random.number({min: 1, max: 5}),
-            imageUrl: faker.image.animals()
+            rating: faker.random.number({min: 1, max: 5, precision: 0.5}),
+            imageUrl: faker.image.technics(),
+            onSale: faker.random.boolean()
         };
         furnitureArr.push(sampleFurniture);
     }
