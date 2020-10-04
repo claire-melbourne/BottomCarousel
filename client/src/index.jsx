@@ -40,7 +40,7 @@ class App extends React.Component {
               this.setState({
                   data: data,
                   displayed: data.slice(0, 8)
-              })
+              });
           })
     }
 
