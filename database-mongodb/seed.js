@@ -8,15 +8,18 @@ const furnitureArr = [];
 
 const bulkCreate = () => {
     for (let i = 0; i < 100; i++) {
-        let sampleFurniture = {
-            name: faker.commerce.productName(),
-            category: faker.commerce.product(),
-            price: faker.random.number({min: 20, max: 300}),
-            rating: faker.random.number({min: 1, max: 5, precision: 0.5}),
-            imageUrl: faker.image.technics(),
-            onSale: faker.random.boolean()
-        };
-        furnitureArr.push(sampleFurniture);
+        for (let j = 0; j < 8; j++) {
+            let sampleFurniture = {
+                id: i,
+                name: faker.commerce.productName(),
+                category: faker.commerce.product(),
+                price: faker.random.number({min: 20, max: 300}),
+                rating: faker.random.number({min: 1, max: 5, precision: 0.5}),
+                imageUrl: faker.image.technics(),
+                onSale: faker.random.boolean()
+            };
+            furnitureArr.push(sampleFurniture);
+        }
     }
 };
 
