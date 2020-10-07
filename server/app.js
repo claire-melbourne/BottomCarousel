@@ -6,13 +6,14 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get('/relatedFurnitures', (request, response) => {
-    Furniture.find({}, (error, data) => {
-        console.log(error);
-        //console.log(data);
-        response.send(JSON.stringify(data));
-        response.end();
-    });
+app.get('/product/:id', (request, response) => {
+    Furniture.find({id: request.params.id})
+        .then((res) => {
+            response.json(res);
+        })
+        .catch((error) => {
+            response.end(error);
+        });
 });
 
 module.exports = app;

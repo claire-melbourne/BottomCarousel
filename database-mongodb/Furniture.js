@@ -3,6 +3,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const furnitureSchema = new mongoose.Schema({
+    id: Number,
     name: String,
     category: String,
     price: Number,

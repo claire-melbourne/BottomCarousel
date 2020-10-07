@@ -23,8 +23,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
-            displayed: []
+            items: []
         };
         this.breakPoints = [
             { width: 1, itemsToShow: 1 },
@@ -36,10 +35,9 @@ class App extends React.Component {
 
     componentDidMount() {
         controllers.getFurnitures()
-          .then(({ data }) => {
+          .then(({data}) => {
               this.setState({
-                  data: data,
-                  displayed: data.slice(0, 8)
+                  items: data
               });
           })
     }
@@ -54,7 +52,7 @@ class App extends React.Component {
                     breakPoints={this.breakPoints}
                     itemsToShow={4}
                     >
-                    {this.state.displayed.map((item) => {
+                    {this.state.items.map((item) => {
                         return (<CarouselItem key={item['_id']} item={item}/>);
                     })}
                     </Carousel>
@@ -64,4 +62,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('BottomCarousel'));
