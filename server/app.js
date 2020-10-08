@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.get('/product/:id', (request, response) => {
+app.get('/api/similarProducts/products/:id', (request, response) => {
     Furniture.find({id: request.params.id})
         .then((res) => {
             response.json(res);
