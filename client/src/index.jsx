@@ -12,7 +12,6 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     padding: 0px;
-    height: 100vh;
 `;
 
 const Title = styled.h3`
@@ -34,7 +33,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        controllers.getFurnitures()
+        controllers.getFurnitures(window.location.pathname.substring(10))
           .then(({data}) => {
               this.setState({
                   items: data
