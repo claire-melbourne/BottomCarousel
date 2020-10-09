@@ -33,7 +33,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        controllers.getFurnitures(window.location.pathname.substring(10))
+        controllers.getFurnitures(Number(window.location.pathname.split('/').slice(-1)))
           .then(({data}) => {
               this.setState({
                   items: data
