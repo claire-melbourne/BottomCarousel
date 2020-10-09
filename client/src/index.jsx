@@ -33,8 +33,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        //window.location.pathname.substring(10)
-        controllers.getFurnitures(4)
+        controllers.getFurnitures(window.location.pathname.substring(10))
           .then(({data}) => {
               this.setState({
                   items: data
