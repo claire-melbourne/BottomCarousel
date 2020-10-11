@@ -1,6 +1,7 @@
 const db = require('./index.js');
 const faker = require('faker');
 const Furniture = require('./Furniture.js');
+const coolImages = require('cool-images');
 
 //use faker.js to generate random data
 //create 100 copies of sample furniture
@@ -15,7 +16,7 @@ const bulkCreate = () => {
                 category: faker.commerce.product(),
                 price: faker.random.number({min: 20, max: 300}),
                 rating: faker.random.number({min: 1, max: 5, precision: 0.5}),
-                imageUrl: faker.image.technics(),
+                imageUrl: coolImages.one(),
                 onSale: faker.random.boolean()
             };
             furnitureArr.push(sampleFurniture);
