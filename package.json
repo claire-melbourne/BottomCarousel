@@ -23,6 +23,7 @@
     "axios": "^0.20.0",
     "babel": "^6.23.0",
     "babel-loader": "^8.1.0",
+    "cool-images": "^1.0.3",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "file-loader": "^6.1.0",

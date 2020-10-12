@@ -16,6 +16,9 @@ const Container = styled.div`
 
 const Title = styled.h3`
     display: inline-block;
+    font-family: sans-serif;
+    padding-left: 40px;
+    margin: 8px;
 `;
 
 class App extends React.Component {
